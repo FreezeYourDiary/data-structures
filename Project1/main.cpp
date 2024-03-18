@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "LinkedList.h"
+
 // LISTA [ADT] ---> ArrayList [kluczowe parametry size, capacity]
 //             ---> Lista jednokierunkowa ---> Lista Dwukierunkowa????
 // [ADT] nie przechowuje zmiennych?

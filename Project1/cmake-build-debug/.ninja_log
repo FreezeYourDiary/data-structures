@@ -1,0 +1,8 @@
+# ninja log v5
+12	59	7323084939434621	CMakeFiles/Project1.dir/LinkedList.cpp.obj	759cf61c409f0e2e
+8	578	7323084944601647	CMakeFiles/Project1.dir/main.cpp.obj	2a28005552b077e9
+0	579	7323084944591656	CMakeFiles/Project1.dir/ArrayList.cpp.obj	489801b39ccfdbb0
+579	854	7323084947182610	Project1.exe	94a6b383351c4a10
+1	992	7324862999753443	CMakeFiles/Project1.dir/main.cpp.obj	2a28005552b077e9
+14	995	7324862999774123	CMakeFiles/Project1.dir/LinkedList.cpp.obj	759cf61c409f0e2e
+995	1236	7324863001676050	Project1.exe	94a6b383351c4a10

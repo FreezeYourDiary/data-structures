@@ -39,7 +39,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
       
       The C compiler identification is MSVC, found in:
-        D:/Repos/Project1/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.exe
+        D:/Repos/SD/Project1/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.exe
       
   -
     kind: "message-v1"
@@ -51,7 +51,7 @@ events:
     message: |
       Detecting C compiler /showIncludes prefix:
         main.c
-        Note: including file: D:\\Repos\\Project1\\cmake-build-debug\\CMakeFiles\\ShowIncludes\\foo.h
+        Note: including file: D:\\Repos\\SD\\Project1\\cmake-build-debug\\CMakeFiles\\ShowIncludes\\foo.h
         
       Found prefix "Note: including file: "
   -
@@ -85,7 +85,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
       
       The CXX compiler identification is MSVC, found in:
-        D:/Repos/Project1/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/CMakeCXXCompilerId.exe
+        D:/Repos/SD/Project1/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/CMakeCXXCompilerId.exe
       
   -
     kind: "message-v1"
@@ -97,7 +97,7 @@ events:
     message: |
       Detecting CXX compiler /showIncludes prefix:
         main.c
-        Note: including file: D:\\Repos\\Project1\\cmake-build-debug\\CMakeFiles\\ShowIncludes\\foo.h
+        Note: including file: D:\\Repos\\SD\\Project1\\cmake-build-debug\\CMakeFiles\\ShowIncludes\\foo.h
         
       Found prefix "Note: including file: "
   -
@@ -109,8 +109,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/Repos/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-du35z0"
-      binary: "D:/Repos/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-du35z0"
+      source: "D:/Repos/SD/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-dxj9ss"
+      binary: "D:/Repos/SD/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-dxj9ss"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -119,11 +119,11 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Repos/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-du35z0'
+        Change Dir: 'D:/Repos/SD/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-dxj9ss'
         
-        Run Build Command(s): "D:/CLion 2023.3.2/bin/ninja/win/x64/ninja.exe" -v cmTC_37a86
-        [1/2] C:\\PROGRA~1\\MICROS~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1434~1.319\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_37a86.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_37a86.dir\\ /FS -c "D:\\CLion 2023.3.2\\bin\\cmake\\win\\x64\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
-        [2/2] cmd.exe /C "cd . && "D:\\CLion 2023.3.2\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_37a86.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100220~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100220~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1434~1.319\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_37a86.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_37a86.exe /implib:cmTC_37a86.lib /pdb:cmTC_37a86.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "D:/CLion 2023.3.2/bin/ninja/win/x64/ninja.exe" -v cmTC_c305d
+        [1/2] C:\\PROGRA~1\\MICROS~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1434~1.319\\bin\\Hostx64\\x64\\cl.exe  /nologo   /DWIN32 /D_WINDOWS  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_c305d.dir\\CMakeCCompilerABI.c.obj /FdCMakeFiles\\cmTC_c305d.dir\\ /FS -c "D:\\CLion 2023.3.2\\bin\\cmake\\win\\x64\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+        [2/2] cmd.exe /C "cd . && "D:\\CLion 2023.3.2\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_c305d.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100220~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100220~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1434~1.319\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_c305d.dir\\CMakeCCompilerABI.c.obj  /out:cmTC_c305d.exe /implib:cmTC_c305d.lib /pdb:cmTC_c305d.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -135,8 +135,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/Repos/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n82c6c"
-      binary: "D:/Repos/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n82c6c"
+      source: "D:/Repos/SD/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-nmcy30"
+      binary: "D:/Repos/SD/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-nmcy30"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -145,11 +145,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Repos/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-n82c6c'
+        Change Dir: 'D:/Repos/SD/Project1/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-nmcy30'
         
-        Run Build Command(s): "D:/CLion 2023.3.2/bin/ninja/win/x64/ninja.exe" -v cmTC_600ff
-        [1/2] C:\\PROGRA~1\\MICROS~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1434~1.319\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_600ff.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_600ff.dir\\ /FS -c "D:\\CLion 2023.3.2\\bin\\cmake\\win\\x64\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] cmd.exe /C "cd . && "D:\\CLion 2023.3.2\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_600ff.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100220~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100220~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1434~1.319\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_600ff.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_600ff.exe /implib:cmTC_600ff.lib /pdb:cmTC_600ff.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "D:/CLion 2023.3.2/bin/ninja/win/x64/ninja.exe" -v cmTC_2b47a
+        [1/2] C:\\PROGRA~1\\MICROS~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1434~1.319\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /EHsc  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\\cmTC_2b47a.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_2b47a.dir\\ /FS -c "D:\\CLion 2023.3.2\\bin\\cmake\\win\\x64\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] cmd.exe /C "cd . && "D:\\CLion 2023.3.2\\bin\\cmake\\win\\x64\\bin\\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\\cmTC_2b47a.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100220~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100220~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MICROS~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1434~1.319\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_2b47a.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_2b47a.exe /implib:cmTC_2b47a.lib /pdb:cmTC_2b47a.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
 ...
