@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "LinkedList.h"
-
+#include "SinglyLinkedListHT.h"
 // LISTA [ADT] ---> ArrayList [kluczowe parametry size, capacity]
 //             ---> Lista jednokierunkowa ---> Lista Dwukierunkowa????
 // [ADT] nie przechowuje zmiennych?
@@ -19,11 +19,9 @@
 
 
 int main() {
-    SinglyLinkedList lista;
-    lista.Add(0,0);
-    lista.Add(9,9);
+    SinglyLinkedListHT lista;
+    lista.AddBack(1);
+    lista.AddFront(2);
     lista.Print();
-    std::cout<<lista.Find(0);
-    std::cout<<lista.Find(2);
 }
 

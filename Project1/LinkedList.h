@@ -5,6 +5,7 @@
 #include "Node.h"
 
 class SinglyLinkedList : public List {
+protected:
     Node* head; //następny element na liscie
 //    int size;
 

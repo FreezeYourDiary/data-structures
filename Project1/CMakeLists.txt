@@ -10,4 +10,6 @@ add_executable(Project1 main.cpp
         LinkedList.h
         LinkedList.cpp
         Node.h
+        SinglyLinkedListHT.h
+        SinglyLinkedListHT.cpp
 )
