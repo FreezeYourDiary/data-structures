@@ -16,7 +16,6 @@ public:
 
     virtual bool Find(int element)=0;
     virtual int ReturnElement(int index)=0;
-    virtual int ReturnSize()=0;
     virtual bool isEmpty()=0;
 
     virtual void Print()=0;

@@ -2,18 +2,11 @@
 #define PROJECT1_LINKEDLIST_H
 #include "List.h"
 #include <iostream>
-
-class Node {
-public:
-    int number;
-    Node* next;
-
-    Node(int number);// używamy przy tworzeniu nowych węzłów
-};
+#include "Node.h"
 
 class SinglyLinkedList : public List {
     Node* head; //następny element na liscie
-    int size;
+//    int size;
 
 public:
     SinglyLinkedList();
@@ -32,16 +25,13 @@ public:
 
     bool Remove(int index) override;
 
+    //dajmy int by return liczbe a nie tylko czy istnieje
     bool Find(int element) override;
 
     int ReturnElement(int index) override;
 
-    int ReturnSize() override {
-        return size;
-    }
-
     bool isEmpty() override {
-        return size == 0;
+        return head==nullptr; // skoro size nie używany
     }
 
     void Print() override;

@@ -20,12 +20,10 @@
 
 int main() {
     SinglyLinkedList lista;
-    lista.Add(1,0);
-    lista.AddFront(5);
-    lista.AddBack(6);
-
-    lista.RemoveFront();
+    lista.Add(0,0);
+    lista.Add(9,9);
     lista.Print();
-
+    std::cout<<lista.Find(0);
+    std::cout<<lista.Find(2);
 }
 

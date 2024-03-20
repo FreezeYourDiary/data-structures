@@ -9,4 +9,5 @@ add_executable(Project1 main.cpp
         ArrayList.cpp
         LinkedList.h
         LinkedList.cpp
+        Node.h
 )

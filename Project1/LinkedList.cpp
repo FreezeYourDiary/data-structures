@@ -1,12 +1,6 @@
-//
-
 #include "LinkedList.h"
 
-
-Node::Node(int number)
- : number(number), next(nullptr) {}
-
-SinglyLinkedList::SinglyLinkedList() : head(nullptr), size(0) {}
+SinglyLinkedList::SinglyLinkedList() : head(nullptr) {}
 
 SinglyLinkedList::~SinglyLinkedList() {
     Node* current = head;
@@ -14,63 +8,52 @@ SinglyLinkedList::~SinglyLinkedList() {
         Node* temp = current;
         current = current->next;
         delete temp;
+        // pomocnicza, która przechowuje adres current węzła,
+        // aby  nie utracić referencji do węzła, który ~~zostanie usunięty.
     }
     head = nullptr;
 }
 
 void SinglyLinkedList::AddFront(int element) {
     Node* newNode = new Node(element);
-    // int number;
-    // Node* next;
-    newNode->next = head; //obecny początek listy, 0->,1,2,3,4,5
-    head = newNode; // czyli to teraz początek listy
-    size++;
+    newNode->next = head; //czyli nowy węzeł wskazuje na obecny pierwszy element listy.
+    head = newNode; //aktualizacja headu teraz już jako ten pierwszy element
 }
 
 void SinglyLinkedList::AddBack(int element) {
     Node* newNode = new Node(element);
-    if (head == nullptr) {
+    if (isEmpty()) {
         head = newNode;
-        // czy lista jest pusta.
+        // czyli zamiast isEmpty.
     } else {
         Node* current = head;
-        // 1,2,3,4,5 ->nullptr
-        // dopoki nie nullptr, przesuwamy się listą
         while (current->next != nullptr) {
             current = current->next;
         }
-        //kiedy nullptr [czyli koniec listy], ten sąsiad który był nullptr(czyli go nie istniało), przypisujemy wartośc newNode;
         current->next = newNode;
     }
-    size++;
 }
 
-void SinglyLinkedList::Add(int element, int index){
-    if (index < 0 || index > size) {
+void SinglyLinkedList::Add(int element, int index) {
+    if (index < 0) {
         std::cout << "Invalid index\n";
         return;
     }
-    // przypadki dla krańców zakresu
     if (index == 0) {
         AddFront(element);
-    } else if (index == size) {
-        AddBack(element);
-
     } else {
-        Node* newNode = new Node(element); // wstawiany do listy na pozycji index
-        Node* current = head; //gdy stwarzamy lilse -> nullptr
-
-        for (int i = 0; i < index - 1; i++) {
-            current = current->next; //index-1
+        Node* newNode = new Node(element);
+        Node* current = head;
+        for (int i = 0; i < index - 1 && current != nullptr; i++) {
+            current = current->next;
         }
-        // Ustawiamy wskaźnik next nowego węzła tak, aby wskazywał na węzeł, który wcześniej znajdował
-        // się na pozycji index. Oznacza to, że nowy węzeł będzie teraz wskazywał na ten sam element,
-        // na który wcześniej wskazywał węzeł poprzedzający index.
-        newNode->next = current->next; // index
-        // Ustawiamy wskaźnik next węzła poprzedzającego pozycję index tak, aby wskazywał na nowy węzeł.
-        // W ten sposób nowy węzeł zostaje "wstawiony" do listy na pozycji index.
+        if (current == nullptr) {
+            // no size fix
+            std::cout << "Invalid index\n";
+            return;
+        }
+        newNode->next = current->next;
         current->next = newNode;
-        size++;
     }
 }
 
@@ -82,7 +65,6 @@ bool SinglyLinkedList::RemoveFront() {
     Node* temp = head;
     head = head->next;
     delete temp;
-    size--;
     return true;
 }
 
@@ -91,7 +73,7 @@ bool SinglyLinkedList::RemoveBack() {
         std::cout << "List is empty\n";
         return false;
     }
-    if (size == 1) {
+    if (head->next == nullptr) {
         delete head;
         head = nullptr;
     } else {
@@ -102,32 +84,32 @@ bool SinglyLinkedList::RemoveBack() {
         delete current->next;
         current->next = nullptr;
     }
-    size--;
     return true;
 }
 
 bool SinglyLinkedList::Remove(int index) {
-    if (index < 0 || index >= size) {
+    if (index < 0) {
         std::cout << "Invalid index\n";
         return false;
     }
     if (index == 0) {
         return RemoveFront();
-    } else if (index == size - 1) {
-        return RemoveBack();
-    } else {
-        Node* current = head;
-        for (int i = 0; i < index - 1; i++) {
-            current = current->next;
-        }
-        Node* temp = current->next;
-        current->next = temp->next;
-        delete temp;
-        size--;
-        return true;
     }
+    Node* current = head;
+    for (int i = 0; i < index - 1 && current != nullptr; i++) {
+        current = current->next;
+    }
+    if (current == nullptr || current->next == nullptr) {
+        std::cout << "Invalid index\n";
+        return false;
+    }
+    Node* temp = current->next;
+    current->next = temp->next;
+    delete temp;
+    return true;
 }
 
+//todo w postaci zwracania liczby
 bool SinglyLinkedList::Find(int element) {
     Node* current = head;
     while (current != nullptr) {
@@ -140,21 +122,27 @@ bool SinglyLinkedList::Find(int element) {
 }
 
 int SinglyLinkedList::ReturnElement(int index) {
-    if (index < 0 || index >= size) {
+    if (index < 0) {
         std::cout << "Invalid index\n";
-        return -1;
+        return 1;
     }
     Node* current = head;
-    for (int i = 0; i < index; i++) {
+    for (int i = 0; i < index && current != nullptr; i++) {
         current = current->next;
+    //size fix
+    }
+    if (current == nullptr) {
+        //since not size
+        std::cout << "Invalid index\n";
+        return 1;
     }
     return current->number;
 }
 
-void SinglyLinkedList::Print()  {
+void SinglyLinkedList::Print() {
     Node* current = head;
     while (current != nullptr) {
-        std::cout <<"\nliczba: \n" << current->number << "\n Adres:\n " << &current->number;
+        std::cout << "\nliczba: \n" << current->number << "\nAdres:\n " << current;
         current = current->next;
     }
     std::cout << std::endl;

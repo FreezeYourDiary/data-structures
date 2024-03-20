@@ -16,9 +16,9 @@ public:
     // Konstruktor listy o zdefiniowanym rozmiarze + generuje wypełnia tą listę losowymi liczbami
     ArrayList(int size);
     ~ArrayList();
-
+    // now not override since no use in ADT
     int ReturnCapacity();
-    int ReturnSize() override;
+    int ReturnSize();
     bool isEmpty() override;
 
     int ReturnElement(int index)override;
@@ -36,7 +36,7 @@ public:
     bool RemoveFront()override;
     bool Remove(int index)override;
 
-    // Funkcja zwracająca element na podanej pozycji
+    // miejsce dla? Funkcja zwracająca element na podanej pozycji
 
     void Print()override;
 };
