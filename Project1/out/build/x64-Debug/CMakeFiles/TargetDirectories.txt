@@ -1,0 +1,3 @@
+C:/Users/Dell/Desktop/Studia/semestr 4/Struktury danych/data-structures/Project1/out/build/x64-Debug/CMakeFiles/Project1.dir
+C:/Users/Dell/Desktop/Studia/semestr 4/Struktury danych/data-structures/Project1/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Dell/Desktop/Studia/semestr 4/Struktury danych/data-structures/Project1/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
