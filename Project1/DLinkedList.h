@@ -9,6 +9,7 @@ class DLinkedList : public List {
 private:
     DNode* head;
     DNode* tail;
+    int size;
 
 public:
     DLinkedList();

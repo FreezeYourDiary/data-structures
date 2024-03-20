@@ -6,8 +6,8 @@ void SinglyLinkedListHT::AddBack(int element) {
         head = tail = newNode;
     }
     else {
-        tail->next = newNode;
-        tail = newNode;
+        tail->next = newNode;   //ten "aktualizuje" koniec listy. W sensie ¿e to co by³o nullptr teraz nowy element.
+        tail = newNode;         //tu tail listy jest ustawiony jako wêzê³ dodany przez nas
     }
 }
 
