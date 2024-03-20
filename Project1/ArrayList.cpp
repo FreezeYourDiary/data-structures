@@ -62,7 +62,9 @@ bool ArrayList::RemoveBack() {
         return false;
     }
     //todo zwolnienie pamięci jeszcze??
+    //Shrink();
     --size;
+
     return true;
 }
 
@@ -73,7 +75,9 @@ bool ArrayList::RemoveFront() {
     for (int i = 0; i < size - 1; ++i) {
         array[i] = array[i + 1];
     }
+    //Shrink();
     size--;
+
     return true;
 }
 
@@ -84,7 +88,9 @@ bool ArrayList::Remove(int index) {
     for (int i = index; i < size - 1; ++i) {
         array[i] = array[i + 1];
     }
+    //Shrink();
     size--;
+
     return true;
 }
 
@@ -139,3 +145,15 @@ int ArrayList::ReturnCapacity() {
 int ArrayList::ReturnSize() {
     return this->size;
 }
+
+//void ArrayList::Shrink() {
+//    if (size < capacity / 2) {
+//        int *newArray = new int[size];//shrinking itself 1
+//        for (int i = 0; i < size; ++i) {
+//            newArray[i] = array[i];
+//        }//copy as usual
+//        delete[] array;
+//        array = newArray;
+//        capacity = size;//shrinking itself 2
+//    }
+//}

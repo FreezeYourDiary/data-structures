@@ -36,6 +36,7 @@ public:
     bool RemoveFront()override;
     bool Remove(int index)override;
 
+    //void Shrink();
     // miejsce dla? Funkcja zwracająca element na podanej pozycji
 
     void Print()override;

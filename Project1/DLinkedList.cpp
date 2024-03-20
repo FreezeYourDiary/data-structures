@@ -117,9 +117,17 @@ void DLinkedList::Print() {
 }
 
 bool DLinkedList::Find(int element) { //S¹ ciê¿ary, jutro bêdzie lepiej :-P
+return 1;
+}
 
+bool DLinkedList::isEmpty() {
+    return false;
 }
 
 int DLinkedList::ReturnElement(int index) { //Jestem bardzo zmêczony, trzeba zrbiæ to jeszcze i bêdzie ok:)
- 
+ return 1;
+}
+
+bool DLinkedList::RemoveBack() {
+    return false;
 }
