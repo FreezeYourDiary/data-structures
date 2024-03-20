@@ -7,15 +7,13 @@
 
 class DLinkedList : public List {
 private:
-    Node* head; 
-    Node* tail; 
- 
+    DNode* head;
+    DNode* tail;
 
 public:
     DLinkedList();
 
- 
-    ~DLinkedList() override;
+    ~DLinkedList();
 
     void AddFront(int element) override;
 
@@ -32,8 +30,6 @@ public:
     bool Find(int element) override;
 
     int ReturnElement(int index) override;
-
-    int ReturnSize() override;
 
     bool isEmpty() override;
 

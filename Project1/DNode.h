@@ -2,12 +2,13 @@
 #define PROJECT1_DNODE_H
 
 class DNode {
-public:
     int number;
-    DNode* prev; 
-    DNode* next; 
+    DNode* prev;
+    DNode* next;
+public:
 
-    DNode(int number) : number(number), prev(nullptr), next(nullptr) {} 
+    DNode(int number) : number(number), prev(nullptr), next(nullptr) {}
+    friend class DLinkedList;
 };
 
 #endif //PROJECT1_DNODE_H
