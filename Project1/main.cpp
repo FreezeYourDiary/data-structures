@@ -20,8 +20,9 @@
 
 int main() {
     SinglyLinkedListHT lista;
-    lista.AddBack(1);
-    lista.AddFront(2);
+    lista.AddBack(5);
+    lista.AddBack(5);
+    lista.AddFront(1);
     lista.Print();
 }
 

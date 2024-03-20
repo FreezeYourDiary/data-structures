@@ -7,7 +7,8 @@
 class SinglyLinkedListHT : public SinglyLinkedList {
     Node* tail;
 public:
-    SinglyLinkedListHT(): tail(nullptr){};
+    SinglyLinkedListHT(): SinglyLinkedList(), tail(nullptr){};
+    ~SinglyLinkedListHT();
     void AddBack(int element)override;
 };
 

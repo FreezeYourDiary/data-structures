@@ -8,7 +8,7 @@ public:
     explicit Node(int number)
             : number(number), next(nullptr) {};
     friend class SinglyLinkedList;
-
+    friend class SinglyLinkedListHT;
 
 };
 

@@ -112,7 +112,7 @@ bool ArrayList::Find(int element) {
 }
 
 void ArrayList::Enlarge() {
-    if(capacity!=0)
+    if(capacity!=0) //5 10
         capacity *= 2;
     else
         capacity = 2;

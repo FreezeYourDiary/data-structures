@@ -7,7 +7,7 @@
 class SinglyLinkedList : public List {
 protected:
     Node* head; //następny element na liscie
-//    int size;
+//  int size;
 
 public:
     SinglyLinkedList();
