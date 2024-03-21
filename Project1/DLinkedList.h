@@ -35,6 +35,7 @@ public:
     bool isEmpty() override;
 
     void Print() override;
+    void Load(const char* filename)override;
 };
 
 #endif //PROJECT1_LINKEDLIST2_H

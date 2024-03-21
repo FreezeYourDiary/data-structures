@@ -1,6 +1,6 @@
 #ifndef PROJECT1_LIST_H
 #define PROJECT1_LIST_H
-
+#include "fstream"
 class List{
 public:
     List()= default;
@@ -20,6 +20,8 @@ public:
 
     virtual void Print()=0;
 
+    // experimental
+    virtual void Load(const char* filename)=0;
 
 };
 

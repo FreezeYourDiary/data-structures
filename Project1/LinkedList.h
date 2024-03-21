@@ -35,6 +35,8 @@ public:
     }
 
     void Print() override;
+
+    void Load(const char* filename)override;
 };
 
 

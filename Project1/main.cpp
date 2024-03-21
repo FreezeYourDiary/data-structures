@@ -15,7 +15,9 @@
 //                  początek, koniec, losowe miejsce?
 // dodatkowo: print(), clear(), printLenght(), find()...
 
-
+//void LoadFrom(){
+//    // też dać zabezpieczenie przed -/ dziwnymi znakami+spcjami chyba.
+//}
 
 
 int main() {
@@ -35,22 +37,25 @@ int main() {
     //dokończyć ten doublelinkedlist
     //Miernik czasu.
     //Ewenatulanie zapisywanie do pliku.
-    for (int i =0;i<=40;i++){
-        Option1.AddFront(i);
-        Option2.AddFront(i);
-        Option3.AddFront(i);
-        Option4.AddFront(i);
-    }
-    Option1.Find(32);
-    Option2.Find(32);
-    Option3.Find(32);
-    Option4.Find(32);
-
-    for (int i =0;i<=20;i++){
-        Option4.RemoveBack();
-    }
-    Option4.Print();
+//    for (int i =0;i<=40;i++){
+//        Option1.AddFront(i);
+//        Option2.AddFront(i);
+//        Option3.AddFront(i);
+//        Option4.AddFront(i);
+//    }
+//    Option1.Find(32);
+//    Option2.Find(32);
+//    Option3.Find(32);
+//    Option4.Find(32);
+//
+//    for (int i =0;i<=20;i++){
+//        Option4.RemoveBack();
+//    }
+//    Option4.Print();
+    const char* filename = R"(D:\Repos\SD\Project1\test.txt)"; //issue with relative path still.
+    Option1.Load(filename);
+    Option1.Print();
 
 
 }
-
+// function to menu

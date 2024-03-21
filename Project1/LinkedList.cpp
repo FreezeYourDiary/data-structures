@@ -150,3 +150,7 @@ void SinglyLinkedList::Print() {
     }
     std::cout << std::endl;
 }
+
+void SinglyLinkedList::Load(const char *filename) {
+    //for now;
+}

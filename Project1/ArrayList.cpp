@@ -147,6 +147,19 @@ int ArrayList::ReturnSize() {
     return this->size;
 }
 
+void ArrayList::Load(const char *filename) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "issue with file, cannot open" << filename << std::endl;
+        return;
+    }
+    int number;
+    while(file>>number){
+        AddBack(number);//addback bo jakby zczytywało linijka po linijce to by było też z tyłu
+    }
+    file.close();
+}
+
 //void ArrayList::Shrink() {
 //    if (size < capacity / 2) {
 //        int *newArray = new int[size];//shrinking itself 1

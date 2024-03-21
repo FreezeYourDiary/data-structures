@@ -167,3 +167,7 @@ bool DLinkedList::RemoveBack() {
     size--;
     return true;
 }
+
+void DLinkedList::Load(const char *filename) {
+    // for now
+}
