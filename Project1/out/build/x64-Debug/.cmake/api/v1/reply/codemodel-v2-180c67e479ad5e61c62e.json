@@ -39,7 +39,11 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Project1::@6890427a1f51a3e7e1df",
+<<<<<<<< Updated upstream:Project1/out/build/x64-Debug/.cmake/api/v1/reply/codemodel-v2-180c67e479ad5e61c62e.json
 					"jsonFile" : "target-Project1-Debug-bc39434ff1aca5c1a06a.json",
+========
+					"jsonFile" : "target-Project1-Debug-c9f5ca7727b1839444de.json",
+>>>>>>>> Stashed changes:Project1/out/build/x64-Debug/.cmake/api/v1/reply/codemodel-v2-99873e218da6722d4196.json
 					"name" : "Project1",
 					"projectIndex" : 0
 				}
