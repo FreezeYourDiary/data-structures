@@ -116,18 +116,54 @@ void DLinkedList::Print() {
     std::cout << std::endl;
 }
 
-bool DLinkedList::Find(int element) { //S¹ ciê¿ary, jutro bêdzie lepiej :-P
-return 1;
+bool DLinkedList::Find(int element) { //XD
+    DNode* current = head;
+    while (current != nullptr) {
+        if (current->number == element) {
+            std::cout << "Liczba: " << element << std::endl;
+            std::cout << "Pod adresem: " << current << std::endl;
+            return true;
+        }
+        current = current->next;
+
+    }
+        std::cerr<<"Nieprawidlowy index";
+    return false;
+    // te? to widze ?e w wi?kszo?ci wypadk?w poruszamy si? list? w taki sam spos?b wi?c zastanawiam czy nie zrobi?
+    // funkcj? s?u??c? jako iterator kt?ra zwraca w momencie Node kt?ry potrzebujemy.
 }
 
 bool DLinkedList::isEmpty() {
-    return false;
+    return (head == nullptr && tail == nullptr); // nie wiem eventualnie jak dla Tail'a
 }
 
-int DLinkedList::ReturnElement(int index) { //Jestem bardzo zmêczony, trzeba zrbiæ to jeszcze i bêdzie ok:)
- return 1;
+int DLinkedList::ReturnElement(int index) { //XD
+    if (index < 0 || index >= size) {
+        std::cout << "Invalid index\n";
+        return 1;
+    }
+    DNode* current = head;
+    for (int i = 0; i < index; ++i) {
+        current = current->next;
+    }
+    return current->number;
+    //czyli z tym poruszamniem co? podobnego
+    // funkcja:
+    // Dnode initialization;
+    // mo?liwy warunek na to co robimy (jako argument?)
+    // je?eli warunek spe?niony -> return true+ return co chcemy??
 }
 
 bool DLinkedList::RemoveBack() {
-    return false;
+    if (isEmpty()) {
+        std::cout << "List is empty\n"; //lepiej chyba cerr, chocia? nie powiem ?e to jest b??d kiedy lista pusta?
+        return false;
+    }
+    DNode* temp = tail;
+    tail = tail->prev;
+    if (tail)
+        tail->next = nullptr;
+    delete temp;
+    size--;
+    return true;
 }

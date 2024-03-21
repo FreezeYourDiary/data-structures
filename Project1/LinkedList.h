@@ -26,7 +26,6 @@ public:
 
     bool Remove(int index) override;
 
-    //dajmy int by return liczbe a nie tylko czy istnieje
     bool Find(int element) override;
 
     int ReturnElement(int index) override;

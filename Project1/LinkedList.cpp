@@ -114,10 +114,13 @@ bool SinglyLinkedList::Find(int element) {
     Node* current = head;
     while (current != nullptr) {
         if (current->number == element) {
+            std::cout << "Liczba: " << element << std::endl;
+            std::cout << "Pod adresem: " << current << std::endl;
             return true;
         }
         current = current->next;
     }
+    std::cerr<<"Nieprawidlowy index";
     return false;
 }
 

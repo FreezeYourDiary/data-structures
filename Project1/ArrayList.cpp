@@ -114,6 +114,7 @@ bool ArrayList::Find(int element) {
             return true;
         }
     }
+    std::cerr<<"Nieprawidlowy index";
     return false;
 }
 

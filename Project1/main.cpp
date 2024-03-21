@@ -20,27 +20,37 @@
 
 int main() {
     
-//    ArrayList Option1;
-//    SinglyLinkedList Option2;
-//    SinglyLinkedListHT Option3;
-//    DLinkedList Option4;
-//
-//    //W badaniach sprawdzamy: Operacje dodawania i usuwania na:
-//    //Początku list
-//    //Końcu List
-//    //Losowe miejsce na liście.
-//    //Dodatkowo użytkownik stawrza pustą listę, przeszukuje liste, Struktura zwraca element o podanym indexe.
-//    //Lista wypisuje swoje elementy.
-//    //TODO: Na wejściu decydujesz na której liście działasz (Option1, Option2 ...), i co nowe menu co chcesz zrobić.
-//    //dokończyć ten doublelinkedlist
-//    //Miernik czasu.
-//    //Ewenatulanie zapisywanie do pliku.
+    ArrayList Option1;
+    SinglyLinkedList Option2;
+    SinglyLinkedListHT Option3;
+    DLinkedList Option4;
 
-//    ArrayList lista(500);
-//    std::cout<<"\n Size:\n"<<lista.ReturnSize()<<"\n Cap:\n"<< lista.ReturnCapacity();
-//    for(int i =0;i<250;i++) {
-//        lista.RemoveFront();
-//    }
-//    std::cout<<"\n Size:\n"<< lista.ReturnSize()<<"\n Cap:\n"<< lista.ReturnCapacity();
+    //W badaniach sprawdzamy: Operacje dodawania i usuwania na:
+    //Początku list
+    //Końcu List
+    //Losowe miejsce na liście.
+    //Dodatkowo użytkownik stawrza pustą listę, przeszukuje liste, Struktura zwraca element o podanym indexe.
+    //Lista wypisuje swoje elementy.
+    //TODO: Na wejściu decydujesz na której liście działasz (Option1, Option2 ...), i co nowe menu co chcesz zrobić.
+    //dokończyć ten doublelinkedlist
+    //Miernik czasu.
+    //Ewenatulanie zapisywanie do pliku.
+    for (int i =0;i<=40;i++){
+        Option1.AddFront(i);
+        Option2.AddFront(i);
+        Option3.AddFront(i);
+        Option4.AddFront(i);
+    }
+    Option1.Find(32);
+    Option2.Find(32);
+    Option3.Find(32);
+    Option4.Find(32);
+
+    for (int i =0;i<=20;i++){
+        Option4.RemoveBack();
+    }
+    Option4.Print();
+
+
 }
 
