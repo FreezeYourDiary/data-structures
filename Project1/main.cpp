@@ -16,7 +16,16 @@
 
 
 
-void loop(List* lista) {
+void loop(List* lista);
+bool listchoice();
+
+int main() {
+    while (!listchoice()); // no bo zwraca false dopoki nie default;
+    return 0;
+}
+
+void loop(List* lista){
+
     lista->Print();
     bool cond = true;
     while (cond) {
@@ -29,8 +38,8 @@ void loop(List* lista) {
         int number, index;
         switch (wybor) {
             case 1:
-                // lista->Load();
-                std::cout << "In process\n";
+                // obv dodać możliwość użytkownika wpisać adres.
+                lista->Load( R"(D:\Repos\SD\Project1\test.txt)");
                 break;
             case 2:
                 std::cout << "Enter number to add to front: ";
@@ -77,8 +86,8 @@ void loop(List* lista) {
         }
     }
 }
+bool listchoice(){
 
-bool listchoice() {
     std::cout << "Choose your option\n";
     std::cout << "1. ArrayList\n2. SinglyLinkedList\n3. SinglyLinkedListHT\n4. DoubleLinkedList\n";
     std::cout << "Enter your choice (1-4): ";
@@ -118,7 +127,3 @@ bool listchoice() {
     }
 }
 
-int main() {
-    while (!listchoice()); // no bo zwraca false dopoki nie default;
-    return 0;
-}
