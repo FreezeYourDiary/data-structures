@@ -4,7 +4,7 @@
 #include <iostream>
 #include <random>
 
-class ArrayList: List {
+class ArrayList: public List {
 private:
     int capacity; // Pojemność listy (rozmiar tablicy)
     int size;     // Aktualna liczba elementów w liście
