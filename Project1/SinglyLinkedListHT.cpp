@@ -11,6 +11,7 @@ void SinglyLinkedListHT::AddBack(int element) {
     }
 }
 
+
 SinglyLinkedListHT::~SinglyLinkedListHT() {
     Node* current = head;
     while (current != nullptr) {
@@ -19,5 +20,10 @@ SinglyLinkedListHT::~SinglyLinkedListHT() {
         delete temp;
     }
     head = nullptr;
+    tail = nullptr;
+}
+
+void SinglyLinkedListHT::Clear() {
+    SinglyLinkedList::Clear();
     tail = nullptr;
 }

@@ -160,6 +160,11 @@ void ArrayList::Load(const char *filename) {
     file.close();
 }
 
+void ArrayList::Clear() {
+    size = 0; //podstawowo, zmienimy jak cos
+}
+
+
 //void ArrayList::Shrink() {
 //    if (size < capacity / 2) {
 //        int *newArray = new int[size];//shrinking itself 1

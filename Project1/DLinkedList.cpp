@@ -169,5 +169,26 @@ bool DLinkedList::RemoveBack() {
 }
 
 void DLinkedList::Load(const char *filename) {
-    // for now
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "issue with file, cannot open" << filename << std::endl;
+        return;
+    }
+    int number;
+    while(file>>number){
+        AddBack(number);
+    }
+    file.close();
+}
+
+void DLinkedList::Clear() {
+    DNode* current = head;
+    while (current != nullptr) {
+        DNode* temp = current;
+        current = current->next;
+        delete temp;
+    }
+    head = nullptr;
+    tail = nullptr;
+    size = 0;
 }

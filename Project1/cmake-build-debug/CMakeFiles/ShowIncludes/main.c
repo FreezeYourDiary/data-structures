@@ -1,2 +1,5 @@
 #include "foo.h" 
-int main(){}
+#include <iostream>
+int main(){
+	std::cout << "H";
+}

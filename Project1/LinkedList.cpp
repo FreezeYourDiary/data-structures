@@ -152,5 +152,23 @@ void SinglyLinkedList::Print() {
 }
 
 void SinglyLinkedList::Load(const char *filename) {
-    //for now;
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "issue with file, cannot open" << filename << std::endl;
+        return;
+    }
+    int number;
+    while(file>>number){
+        AddBack(number);
+    }
+    file.close();
+}
+void SinglyLinkedList::Clear() {
+    Node* current = head;
+    while (current != nullptr) {
+        Node* temp = current;
+        current = current->next;
+        delete temp;
+    }
+    head = nullptr;
 }

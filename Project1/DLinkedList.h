@@ -36,6 +36,7 @@ public:
 
     void Print() override;
     void Load(const char* filename)override;
+    void Clear() override;
 };
 
 #endif //PROJECT1_LINKEDLIST2_H
