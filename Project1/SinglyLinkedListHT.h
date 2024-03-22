@@ -10,6 +10,7 @@ public:
     SinglyLinkedListHT(): SinglyLinkedList(), tail(nullptr){};
     ~SinglyLinkedListHT();
     void AddBack(int element)override;
+    void Clear() override;
 };
 
 

@@ -3,6 +3,8 @@
 #include "LinkedList.h"
 #include "SinglyLinkedListHT.h"
 #include "DLinkedList.h"
+#include <chrono>
+#include <list>
 // LISTA [ADT] ---> ArrayList [kluczowe parametry size, capacity]
 //             ---> Lista jednokierunkowa ---> Lista Dwukierunkowa????
 // [ADT] nie przechowuje zmiennych?
@@ -19,11 +21,45 @@
 void loop(List* lista);
 bool listchoice();
 
+/*int main() {
+    const char *filename = "D:\\Downloads\\random_numbers.txt"; //for now my local files. obv fix that
+    const char* resfilename = "D:\\Downloads\\results.txt";
+    std::ofstream resultFile(resfilename);
+    if (!resultFile.is_open()) {
+        std::cerr << "Issue with file, cannot open 'results.txt'" << std::endl;
+        return 1;
+    }
+    std::ifstream file(filename); // Use ifstream for reading from a file
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file: " << filename << std::endl;
+        return 1;
+    }
+
+    int array[8] = {5000, 8000, 10000, 16000, 20000, 40000, 60000, 100000};
+
+    for (int a = 0; a < 8; a++) {
+        int *tab = new int[array[a]];
+        int number;
+        int i = 0;
+        while (file >> number && i < array[a]) {
+            tab[i] = number;
+            i++;
+        }
+        auto start = std::chrono::steady_clock::now();
+        SinglyLinkedList lista;
+        for (int i = 0; i < array[a]; i++) {
+            lista.Add(4000,tab[i]);
+        }
+        auto end = std::chrono::steady_clock::now();
+        auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+        resultFile << elapsed << std::endl;
+    }
+    resultFile.close();
+    file.close(); // File will be closed automatically when the ifstream object goes out of scope
+}*/
 int main() {
     while (!listchoice()); // no bo zwraca false dopoki nie default;
-    return 0;
 }
-
 void loop(List* lista){
 
     lista->Print();
@@ -39,7 +75,7 @@ void loop(List* lista){
         switch (wybor) {
             case 1:
                 // obv dodać możliwość użytkownika wpisać adres.
-                lista->Load( R"(D:\Repos\SD\Project1\test.txt)");
+                lista->Load("D:\\Downloads\\random_numbers.txt");
                 break;
             case 2:
                 std::cout << "Enter number to add to front: ";
@@ -68,8 +104,8 @@ void loop(List* lista){
                 lista->Remove(index);
                 break;
             case 8:
-                // lista->Clear();
-                std::cout << "In process\n";
+                lista->Clear();
+
                 break;
             case 9:
                 lista->Print();
@@ -126,4 +162,3 @@ bool listchoice(){
             return true;
     }
 }
-

@@ -171,3 +171,15 @@ bool DLinkedList::RemoveBack() {
 void DLinkedList::Load(const char *filename) {
     // for now
 }
+
+void DLinkedList::Clear() {
+    DNode* current = head;
+    while (current != nullptr) {
+        DNode* temp = current;
+        current = current->next;
+        delete temp;
+    }
+    head = nullptr;
+    tail = nullptr;
+    size = 0;
+}

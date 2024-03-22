@@ -21,3 +21,8 @@ SinglyLinkedListHT::~SinglyLinkedListHT() {
     head = nullptr;
     tail = nullptr;
 }
+
+void SinglyLinkedListHT::Clear() {
+    SinglyLinkedList::Clear();
+    tail = nullptr;
+}
