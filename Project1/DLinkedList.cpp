@@ -97,8 +97,8 @@ bool DLinkedList::Remove(int index) {
     for (int i = 0; i < index; ++i) {
         current = current->next;
     }
-    //usuwa ten wêze³.Pierwsza linia aktualizuje wskaŸnik nastêpnego elementu poprzednika, 
-    // natomiast druga aktualizuje wskaŸnik poprzedniego elementu nastêpnego wêz³a bie¿¹cego, 
+    //usuwa ten wêze³.Pierwsza linia aktualizuje wskaŸnik nastêpnego elementu poprzednika,
+    // natomiast druga aktualizuje wskaŸnik poprzedniego elementu nastêpnego wêz³a bie¿¹cego,
     // a nastêpnie usuwa bie¿¹cy wêze³, zmniejsza rozmiar listy o 1.(Rozmiar jeszcze ustalimy czy jest potrzebny) XD
     current->prev->next = current->next;
     current->next->prev = current->prev;
@@ -156,13 +156,18 @@ int DLinkedList::ReturnElement(int index) { //XD
 
 bool DLinkedList::RemoveBack() {
     if (isEmpty()) {
-        std::cout << "List is empty\n"; //lepiej chyba cerr, chocia? nie powiem ?e to jest b??d kiedy lista pusta?
+        std::cout << "List is empty\n";
         return false;
     }
+
     DNode* temp = tail;
-    tail = tail->prev;
-    if (tail)
+    if (tail == head) { // Naprawiony problem, sprawdzamy tez czy wezel ostatni na liscie
+        head = nullptr;
+        tail = nullptr;
+    } else {
+        tail = tail->prev;
         tail->next = nullptr;
+    }
     delete temp;
     size--;
     return true;
