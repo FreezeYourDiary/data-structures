@@ -23,6 +23,8 @@ public:
     // experimental
     virtual void Load(const char* filename)=0;
 
+    virtual void Save(const char* filename)=0;
+
     virtual void Clear()=0;
 
 };

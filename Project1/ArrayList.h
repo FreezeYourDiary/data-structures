@@ -40,6 +40,7 @@ public:
     // miejsce dla? Funkcja zwracająca element na podanej pozycji
     void Print()override;
     void Load(const char* filename)override;
+    void Save(const char* filename)override;
     void Clear() override;
 };
 

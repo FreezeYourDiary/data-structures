@@ -113,13 +113,13 @@ bool SinglyLinkedList::Find(int element) {
     Node* current = head;
     while (current != nullptr) {
         if (current->number == element) {
-            std::cout << "Liczba: " << element << std::endl;
-            std::cout << "Pod adresem: " << current << std::endl;
+            std::cout << "Number: " << element << std::endl;
+            std::cout << "Adress: " << current << std::endl;
             return true;
         }
         current = current->next;
     }
-    std::cerr<<"Nieprawidlowy index";
+    std::cerr<<"Invalid index";
     return false;
 }
 
@@ -170,4 +170,18 @@ void SinglyLinkedList::Clear() {
         delete temp;
     }
     head = nullptr;
+}
+
+void SinglyLinkedList::Save(const char *filename) {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "issue with file, cannot open " << filename << std::endl;
+        return;
+    }
+    Node* current = head;
+    while (current != nullptr) {
+        file << current->number << "\n";
+        current = current->next;
+    }
+    file.close();
 }

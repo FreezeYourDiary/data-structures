@@ -1,12 +1,12 @@
 #include "DLinkedList.h"
 
 DLinkedList::DLinkedList()
-    : head(nullptr), tail(nullptr), size(0) {}
+        : head(nullptr), tail(nullptr), size(0) {}
 
 DLinkedList::~DLinkedList() {
-    DNode* current = head;
+    DNode *current = head;
     while (current != nullptr) {
-        DNode* temp = current;
+        DNode *temp = current;
         current = current->next;
         delete temp;
     }
@@ -16,31 +16,32 @@ DLinkedList::~DLinkedList() {
 }
 
 void DLinkedList::AddFront(int element) {
-    DNode* newNode = new DNode(element);
+    DNode *newNode = new DNode(element);
     if (!head) {            //If head=nullptr, lista pusta.
         head = newNode;     //Czyli ustawiamy head i tail jako nowy element. 
         tail = newNode;
-    }
-    else {                          //Lista nie jest pusta.
+    } else {                          //Lista nie jest pusta.
         newNode->next = head;       //Ustawia next na nowego wez³¹ na obecny head 
         head->prev = newNode;       //Ustawua preva na bie¿¹cego heda na nowy wêze³ 
         head = newNode;             //Head ma wskazywac na nowy wêze³ 
     }
+    size++; // wykrylem na badaniach
 }
 
 void DLinkedList::AddBack(int element) {
-    DNode* newNode = new DNode(element);
+    DNode *newNode = new DNode(element);
     if (!tail) {
         head = newNode;
         tail = newNode;
     }
-    //ustawia poprzednika nowego Node na aktualny tail(ogn) listy--->ustawia wskaŸnik na nastêpny element ogona 
-    // na nowy wêze³, a dalej linia aktualizuje wskaŸnik ogona na nowy wêze³, który staje siê nowym koñcem listy.
+        //ustawia poprzednika nowego Node na aktualny tail(ogn) listy--->ustawia wskaŸnik na nastêpny element ogona
+        // na nowy wêze³, a dalej linia aktualizuje wskaŸnik ogona na nowy wêze³, który staje siê nowym koñcem listy.
     else {
         newNode->prev = tail;
-        tail->next = newNode;   
-        tail = newNode;         
+        tail->next = newNode;
+        tail = newNode;
     }
+    size++;
 }
 
 void DLinkedList::Add(int element, int index) {
@@ -51,13 +52,11 @@ void DLinkedList::Add(int element, int index) {
 
     if (index == 0) {
         AddFront(element);
-    }
-    else if (index == size) {
+    } else if (index == size) {
         AddBack(element);
-    }
-    else {
-        DNode* newNode = new DNode(element);
-        DNode* current = head;
+    } else {
+        DNode *newNode = new DNode(element);
+        DNode *current = head;
         for (int i = 0; i < index - 1; ++i) {
             current = current->next;
         }
@@ -65,8 +64,9 @@ void DLinkedList::Add(int element, int index) {
         newNode->prev = current;
         current->next->prev = newNode;
         current->next = newNode;
-  
+
     }
+    size++;
 }
 
 bool DLinkedList::RemoveFront() {
@@ -74,14 +74,15 @@ bool DLinkedList::RemoveFront() {
         std::cout << "List is empty\n";
         return false;
     }
-    DNode* temp = head;
+    DNode *temp = head;
     head = head->next;
     if (head)
         head->prev = nullptr;
     delete temp;
-
+    size--;
     return true;
 }
+
 bool DLinkedList::Remove(int index) {
     if (index < 0 || index >= size) {
         std::cout << "Invalid position\n";
@@ -93,7 +94,7 @@ bool DLinkedList::Remove(int index) {
     if (index == size - 1) {
         return RemoveBack();
     }
-    DNode* current = head;
+    DNode *current = head;
     for (int i = 0; i < index; ++i) {
         current = current->next;
     }
@@ -108,7 +109,7 @@ bool DLinkedList::Remove(int index) {
 }
 
 void DLinkedList::Print() {
-    DNode* current = head;
+    DNode *current = head;
     while (current != nullptr) {
         std::cout << current->number << " ";
         current = current->next;
@@ -117,17 +118,17 @@ void DLinkedList::Print() {
 }
 
 bool DLinkedList::Find(int element) { //XD
-    DNode* current = head;
+    DNode *current = head;
     while (current != nullptr) {
         if (current->number == element) {
-            std::cout << "Liczba: " << element << std::endl;
-            std::cout << "Pod adresem: " << current << std::endl;
+            std::cout << "Number: " << element << std::endl;
+            std::cout << "Address: " << current << std::endl;
             return true;
         }
         current = current->next;
 
     }
-        std::cerr<<"Nieprawidlowy index";
+    std::cerr << "Invalid index";
     return false;
     // te? to widze ?e w wi?kszo?ci wypadk?w poruszamy si? list? w taki sam spos?b wi?c zastanawiam czy nie zrobi?
     // funkcj? s?u??c? jako iterator kt?ra zwraca w momencie Node kt?ry potrzebujemy.
@@ -142,7 +143,7 @@ int DLinkedList::ReturnElement(int index) { //XD
         std::cout << "Invalid index\n";
         return 1;
     }
-    DNode* current = head;
+    DNode *current = head;
     for (int i = 0; i < index; ++i) {
         current = current->next;
     }
@@ -160,7 +161,7 @@ bool DLinkedList::RemoveBack() {
         return false;
     }
 
-    DNode* temp = tail;
+    DNode *temp = tail;
     if (tail == head) { // Naprawiony problem, sprawdzamy tez czy wezel ostatni na liscie
         head = nullptr;
         tail = nullptr;
@@ -174,17 +175,45 @@ bool DLinkedList::RemoveBack() {
 }
 
 void DLinkedList::Load(const char *filename) {
-    // for now
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file: " << filename << std::endl;
+        return;
+    }
+
+    Clear();
+
+    int number;
+    while (file >> number) {
+        AddBack(number);
+    }
+    file.close();
 }
 
 void DLinkedList::Clear() {
-    DNode* current = head;
+    DNode *current = head;
     while (current != nullptr) {
-        DNode* temp = current;
+        DNode *temp = current;
         current = current->next;
         delete temp;
     }
     head = nullptr;
     tail = nullptr;
     size = 0;
+}
+
+void DLinkedList::Save(const char *filename) {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Cannot open " << filename << std::endl;
+        return;
+    }
+
+    DNode *current = head;
+    while (current != nullptr) {
+        file << current->number << "\n";
+        current = current->next;
+    }
+
+    file.close();
 }

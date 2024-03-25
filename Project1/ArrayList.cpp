@@ -100,7 +100,7 @@ void ArrayList::Print() {
         return;
     }
     for (int i = 0; i < size; i++) {
-        std::cout<<"Liczba: "<<array[i]<<std::endl<<"Pod adresem: "<<&array[i]<<std::endl;
+        std::cout<<"Number: "<<array[i]<<std::endl<<"Address: "<<&array[i]<<std::endl;
     }
 }
 
@@ -110,11 +110,11 @@ bool ArrayList::Find(int element) {
     }
     for (int i = 0; i < size; i++) {
         if (element == array[i]) {
-            std::cout<<"Liczba: "<<array[i]<<std::endl<<"Pod adresem: "<<&array[i]<<std::endl;
+            std::cout<<"Number: "<<array[i]<<std::endl<<"Adress: "<<&array[i]<<std::endl;
             return true;
         }
     }
-    std::cerr<<"Nieprawidlowy index";
+    std::cerr<<" Invalid index";
     return false;
 }
 
@@ -162,6 +162,20 @@ void ArrayList::Load(const char *filename) {
 
 void ArrayList::Clear() {
     size = 0; //for now
+}
+
+void ArrayList::Save(const char *filename) {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Cannot open " << filename << std::endl;
+        return;
+    }
+
+    for (int i = 0; i < size; ++i) {
+        file << array[i] << "\n";
+    }
+
+    file.close();
 }
 
 //void ArrayList::Shrink() {
