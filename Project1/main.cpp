@@ -5,7 +5,6 @@
 #include "DLinkedList.h"
 #include <chrono>
 #include <limits>
-#include <list>
 // LISTA [ADT] ---> ArrayList [kluczowe parametry size, capacity]
 //             ---> Lista jednokierunkowa ---> Lista Dwukierunkowa????
 // pomyśł na Dnode dziedziczy z Node
@@ -97,67 +96,67 @@ int main() {
     while (!listchoice()); // no bo zwraca false dopoki nie default;
 }
 
-void loop(List* lista){
+void loop(List* lista) {
     bool cond = true;
     while (cond) {
+        system("CLS");
         unsigned int wybor;
-        bool validInput = true; // Flag to track if input was valid
+        bool validInput = true;
         std::cout << "Choose option 1-11? 0 to live]: ";
         std::cout << "\n1. Load list from base[.txt file path required].\n2. Add a number to front of the list.\n3. Add a number to back of the list.\n4. Add number to place defined by you [index required].";
         std::cout << "\n5. Remove number from front of the list\n6. Remove number from back of the list\n7. Remove number from place defined by you [index required].";
-        std::cout << "\n8. Clear the list [in process].\n9. Print the list.\n10. Find whether element (number) is in the list.\n11. Save list to file";
+        std::cout << "\n8. Clear the list [in process].\n9. Print the list.\n10. Find whether element (number) is in the list.\n11. Save list to file (file will be created if not found in folder) [.txt] \n";
         std::cout << "Enter your choice: ";
 
         if (!(std::cin >> wybor)) {
             std::cout << "Invalid input. Enter Integer.\n";
-            validInput = false; // Set flag to false
-            std::cin.clear(); // Clear the fail state
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
-        } else {
+            validInput = false;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+        else {
             int number, index;
             switch (wybor) {
                 case 1: {
-//                    std::string filename;
-//                    std::cout << "Enter filename to save: ";
-//                    std::cin >> filename;
-                    lista->Load("D:\\Downloads\\random_numbers.txt");
+                    std::string filename;
+                    std::cout << "Enter filename to load from: ";
+                    std::cin >> filename;
+                    //lista->Load("D:\\Downloads\\random_numbers.txt");
+                    lista->Load(filename.c_str());
                     break;
                 }
                 case 2:
                     std::cout << "Enter number to add to front: ";
                     std::cin >> number;
                     lista->AddFront(number);
-                    std::cout << "Number " << number << " added to front of the list.\n";
                     break;
                 case 3:
                     std::cout << "Enter number to add to back: ";
                     std::cin >> number;
                     lista->AddBack(number);
-                    std::cout << "Number " << number << " added to back of the list.\n";
                     break;
                 case 4:
                     std::cout << "Enter number and index to add: ";
                     std::cin >> number >> index;
                     lista->Add(number, index);
-                    std::cout << "Number " << number << " added at index " << index << " in the list.\n";
                     break;
                 case 5:
-                    if(lista->RemoveFront()){
-                    std::cout << "Number removed from front of the list.\n";
-                    break;
+                    if (lista->RemoveFront()) {
+                        std::cout << "Number removed from front of the list.\n";
+                        break;
                     }
                     break;
                 case 6:
-                    if(lista->RemoveBack()){
-                    std::cout << "Number removed from back of the list.\n";
-                    break;
+                    if (lista->RemoveBack()) {
+                        std::cout << "Number removed from back of the list.\n";
+                        break;
                     }
                     break;
                 case 7:
                     std::cout << "Enter index to remove: ";
                     std::cin >> index;
                     //lista remove zwraca czy udalo sie, dlatego używamy, bez tego wypisywało number removed nawet kiedy nie udało się
-                    if(lista->Remove(index)) {
+                    if (lista->Remove(index)) {
                         std::cout << "Number removed from index " << index << " in the list.\n";
                         break;
                     }
@@ -174,15 +173,15 @@ void loop(List* lista){
                     std::cin >> number;
                     lista->Find(number);
                     break;
-                case 11:{
-//                    std::string filename;
-//                    std::cout << "Enter filename to load: ";
-//                    std::cin >> filename;
-//                    lista->Save(filename.c_str());
-                    lista->Save("D:\\Downloads\\results.txt");
-                    break;}
+                case 11: {
+                    std::string filename;
+                    std::cout << "Enter filename to save: ";
+                    std::cin >> filename;
+                    lista->Save(filename.c_str());
+                    //lista->Save("D:\\Downloads\\results.txt");
+                    break; }
                 default:
-                    std::cout << "Invalid choice. Returning to main menu.\n";
+                    std::cout << "Returning to main menu.\n";
                     cond = false;
                     break;
             }
@@ -195,7 +194,7 @@ void loop(List* lista){
         }
     }
 }
-bool listchoice(){
+bool listchoice() {
 
     std::cout << "Choose your option\n";
     std::cout << "1. ArrayList\n2. SinglyLinkedList\n3. SinglyLinkedListHT\n4. DoubleLinkedList\n. Any other - exit program.";

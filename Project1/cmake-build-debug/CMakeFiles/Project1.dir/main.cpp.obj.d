@@ -119,4 +119,3 @@ C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.3193
 C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/include/__msvc_chrono.hpp
 C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/include/ratio
 C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/include/xfilesystem_abi.h
-C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/include/list

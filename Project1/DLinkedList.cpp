@@ -128,7 +128,7 @@ bool DLinkedList::Find(int element) { //XD
         current = current->next;
 
     }
-    std::cerr << "Invalid index";
+    std::cerr << "No number found";
     return false;
     // te? to widze ?e w wi?kszo?ci wypadk?w poruszamy si? list? w taki sam spos?b wi?c zastanawiam czy nie zrobi?
     // funkcj? s?u??c? jako iterator kt?ra zwraca w momencie Node kt?ry potrzebujemy.

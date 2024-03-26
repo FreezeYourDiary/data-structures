@@ -119,7 +119,7 @@ bool SinglyLinkedList::Find(int element) {
         }
         current = current->next;
     }
-    std::cerr<<"Invalid index";
+    std::cerr<<"No number found";
     return false;
 }
 

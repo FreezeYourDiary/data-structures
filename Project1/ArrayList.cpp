@@ -114,7 +114,7 @@ bool ArrayList::Find(int element) {
             return true;
         }
     }
-    std::cerr<<" Invalid index";
+    std::cerr<<" No number found";
     return false;
 }
 
